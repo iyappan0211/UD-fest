@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UDMindSpark Arena 2K26 | Urumu Dhanalakshmi College</title>
+
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+}
+
+header{
+    background:#111827;
+    padding:50px;
+}
+
+section{
+    padding:60px 20px;
+}
+
+h1{
+    font-size:70px;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#38bdf8;
+}
+
+.blue{ color:#38bdf8; }
+
+.button{
+    background:#38bdf8;
+    color:#000;
+    padding:12px 25px;
+    display:inline-block;
+    margin-top:20px;
+    border-radius:6px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+}
+.button:hover{
+    background:#0ea5e9;
+}
+
+/* COUNTDOWN */
+.countdown-container{
+    margin-top:40px;
+}
+
+.flip-clock{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.flip-unit{
+    text-align:center;
+}
+
+.flip-card{
+    position:relative;
+    width:80px;
+    height:100px;
+    perspective:1000px;
+}
+
+.flip-card-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    transition:transform 0.7s;
+}
+
+.flip-card.flip .flip-card-inner{
+    transform:rotateX(180deg);
+}
+
+.flip-card-front, .flip-card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    background:#1e293b;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.flip-card-back{
+    transform:rotateX(180deg);
+    background:#334155;
+}
+
+.label{
+    margin-top:10px;
+    font-size:14px;
+}
+
+/* EVENTS */
+.events-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.event-card{
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.event-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(56,189,248,0.4);
+}
+
+/* RULES */
+.rules{
+    text-align:left;
+    max-width:900px;
+    margin:auto;
+}
+
+/* ACCORDION */
+.accordion {
+    background:#1e293b;
+    color:white;
+    cursor:pointer;
+    padding:15px;
+    width:100%;
+    border:none;
+    text-align:left;
+    font-size:18px;
+    margin-top:10px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.accordion:hover {
+    background:#334155;
+}
+
+.panel {
+    max-height:0;
+    overflow:hidden;
+    background:#0f172a;
+    transition:max-height 0.4s ease;
+    border-radius:0 0 8px 8px;
+    padding:0 15px;
+}
+
+.panel ul{
+    padding:15px 0;
+}
+
+/* TEAM */
+.team-section{
+    background:#0b1220;
+}
+
+.team-cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.team-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    width:250px;
+}
+
+footer{
+    background:#111827;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>Urumu Dhanalakshmi College</h2>
+    <p>Department of Bachelor of Computer Applications (BCA)</p>
+
+<img src="ph1.jpeg">
+<h1>FOUNDERS</h1>
+</header>
+
+<section>
+    <h1><span class="blue">UDMindSpark Arena 2K26</span></h1>
+    <p>Last Date for Registration: 26-02-2026</p>
+
+    <a href="https://forms.gle/dt2W782KeECNQGtp9" target="_blank" class="button">
+        🚀 Register Now
+
+        
+    </a><br><br>
+
+
+
+<li>Pre-registration is mandatory for all participants. Entry fee will be collected on the spot during reporting.</li>
+    <div class="countdown-container">
+        <h3>Registration Closes In</h3>
+        <div class="flip-clock">
+
+            <div class="flip-unit">
+                <div class="flip-card" id="days-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" id="days-front">00</div>
+                        <div class="flip-card-back" id="days-back">00</div>
+                    </div>
+                </div>
+                <div class="label">Days</div>
+            </div>
+
+            <div class="flip-unit">
+                <div class="flip-card" id="hours-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" id="hours-front">00</div>
+                        <div class="flip-card-back" id="hours-back">00</div>
+                    </div>
+                </div>
+                <div class="label">Hours</div>
+            </div>
+
+            <div class="flip-unit">
+                <div class="flip-card" id="minutes-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" id="minutes-front">00</div>
+                        <div class="flip-card-back" id="minutes-back">00</div>
+                    </div>
+                </div>
+                <div class="label">Minutes</div>
+            </div>
+
+            <div class="flip-unit">
+                <div class="flip-card" id="seconds-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front" id="seconds-front">00</div>
+                        <div class="flip-card-back" id="seconds-back">00</div>
+                    </div>
+                </div>
+                <div class="label">Seconds</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <h1>Events</h1>
+    <div class="events-grid">
+        <div class="event-card"><h2>Visual Hack</h2><p>Coding based competition.</p></div>
+        <div class="event-card"><h2>Crash & Correct</h2><p>Debugging contest.</p></div>
+        <div class="event-card"><h2>Tech Trivia</h2><p>Technical quiz event.</p></div>
+        <div class="event-card"><h2>Act-O-Mime</h2><p>Creative mime performance.</p></div>
+        <div class="event-card"><h2>AdStorm</h2><p>Advertisement challenge.</p></div>
+        <div class="event-card"><h2>Mystery Matrix</h2><p>Treasure hunt event.</p></div>
+    </div>
+</section>
+
+<section class="rules">
+    <h1>Rules & Guidelines</h1>
+
+    <h2>Event Timing</h2>
+    <ul>
+        <li>Reporting Time: 9:20 AM</li>
+        <li>Event Start Time: 9:45 AM</li>
+        <li>Late entries will not be permitted.</li>
+    </ul>
+
+    <h2>General Rules</h2>
+    <ul>
+        <li>Participants must carry college ID.</li>
+        <li>Report 30 minutes before event.</li>
+        <li>Judges decision is final.</li>
+        <li>Any malpractice leads to disqualification.</li>
+    </ul>
+
+    <h2>Event-wise Rules</h2>
+
+    <button class="accordion">💻 Visual Hack</button>
+    <div class="panel">
+        <ul>
+            <li>Individual participation.</li>
+            <li>Time limit: 90 minutes.</li>
+            <li>No internet usage allowed.</li>
+            <li>Judging based on logic & creativity.</li>
+            <LI>USING JAVA,HTML,CSS,PYTHON</LI>
+        </ul>
+    </div>
+
+    <button class="accordion">🛠 Crash & Correct</button>
+    <div class="panel">
+        <ul>
+            <li>Individual event.</li>
+            <li>Time limit: 60 minutes.</li>
+            <li>Fix errors in given programs.</li>
+              <LI>C,C++,JAVA,HTML,CSS,PYTHON</LI>
+        </ul>
+    </div>
+
+    <button class="accordion">🧠 Tech Trivia</button>
+    <div class="panel">
+        <ul>
+            <li>Coding Related Question</li>
+            <li>Team of 2 members.</li>
+            <li>No electronic gadgets allowed.</li>
+            <li>Multiple quiz rounds.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">🎭 Act-O-Mime</button>
+    <div class="panel">
+        <ul>
+            <li>Team of 3–5 members.</li>
+            <li>No dialogues allowed.</li>
+            <li>Time limit: 5–7 minutes.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">📢 AdStorm</button>
+    <div class="panel">
+        <ul>
+            <li>Team of 2–4 members.</li>
+            <li>Preparation time: 30 minutes.</li>
+            <li>Original content only.</li>
+        </ul>
+    </div>
+
+    <button class="accordion">🧩 Mystery Matrix</button>
+    <div class="panel">
+        <ul>
+            <li>Team of 3–4 members.</li>
+            <li>Follow campus rules strictly.</li>
+            <li>First team to finish wins.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="team-section">
+    <h1>Organizing Committee</h1>
+
+    <div class="team-cards">
+        <div class="team-card">
+            <h2>Staff Incharge</h2>
+            <p><strong>P. Jayalakshimi</strong></p>
+        </div>
+
+        <div class="team-card">
+            <h2>Student Incharge</h2>
+            <p><strong>G. Iyappan</strong></p>
+            <p><strong>A. Sanjaikumar</strong></p>
+        </div>
+    </div>
+
+    <div style="margin-top:40px;">
+        <h2>Contact</h2>
+        <p>📞 9597079864</p>
+        <p>📞 9944254379</p>
+    </div>
+</section>
+
+<footer>
+    Organized by Department of BCA<br>
+    Urumu Dhanalakshmi College
+</footer>
+
+<script>
+function updateFlip(id, value){
+    const front = document.getElementById(id+"-front");
+    const back = document.getElementById(id+"-back");
+    const card = document.getElementById(id+"-card");
+
+    if(front.innerText !== value){
+        back.innerText = value;
+        card.classList.add("flip");
+        setTimeout(()=>{
+            front.innerText = value;
+            card.classList.remove("flip");
+        },700);
+    }
+}
+
+const targetDate = new Date("Feb 26, 2026 23:59:59").getTime();
+
+const timer = setInterval(()=>{
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if(distance < 0){
+        document.querySelector(".flip-clock").innerHTML = "<h2>Registration Closed</h2>";
+        clearInterval(timer);
+        return;
+    }
+
+    const days = String(Math.floor(distance/(1000*60*60*24))).padStart(2,"0");
+    const hours = String(Math.floor((distance%(1000*60*60*24))/(1000*60*60))).padStart(2,"0");
+    const minutes = String(Math.floor((distance%(1000*60*60))/(1000*60))).padStart(2,"0");
+    const seconds = String(Math.floor((distance%(1000*60))/1000)).padStart(2,"0");
+
+    updateFlip("days",days);
+    updateFlip("hours",hours);
+    updateFlip("minutes",minutes);
+    updateFlip("seconds",seconds);
+
+},1000);
+
+var acc = document.getElementsByClassName("accordion");
+for (var i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        var panel = this.nextElementSibling;
+
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            for (var j = 0; j < acc.length; j++) {
+                acc[j].nextElementSibling.style.maxHeight = null;
+            }
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
+
